@@ -1,11 +1,16 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import Work from './components/Work'
+import Stripes from './components/Stripes'
 
 function App() {
 
   return (
-    <>
-      <h1>Refokuss Clone</h1>
-    </>
+    <div className='w-full min-h-screen bg-zinc-900 text-white'>
+      <Navbar />
+      <Work />
+      <Stripes />
+    </div>
   )
 }
 
