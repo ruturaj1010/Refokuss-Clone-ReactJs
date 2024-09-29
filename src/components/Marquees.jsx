@@ -31,7 +31,7 @@ const Marquees = () => {
     ];
 
     return (
-        <div className='w-full'>
+        <div className='w-full py-10'>
             { imgSrcArray.map( ( item, index ) => <Marquee key={ index } imagesURL={ item } /> ) }
         </div>
     )
