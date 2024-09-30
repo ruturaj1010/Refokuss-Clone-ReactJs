@@ -1,9 +1,9 @@
 import React from 'react'
 import { BsArrowRight } from "react-icons/bs";
 
-const Card = ( { width , start , para , hover="none" } ) => {
+const Card = ( { width , start , para , hover } ) => {
     return (
-        <div className={ `${width} hover:${hover} p-5 bg-zinc-800 rounded-lg min-h-96 flex flex-col justify-between` }>
+        <div className={ `${width} ${hover ? 'hover:bg-violet-600' : ''}  p-5 bg-zinc-800 rounded-lg min-h-96 flex flex-col justify-between` }>
             <div className='w-full'>
                 <div className='w-full flex justify-between items-center'>
                     <h3>one heading</h3>
