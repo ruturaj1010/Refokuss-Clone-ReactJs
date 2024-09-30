@@ -1,15 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const Work = () => {
 
-    var images = [
+    const [images, setImages] = useState( [
         { url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d42ab3e32fee7e9535ae_BCGP%20-%2016%209%20(A).webp", top: "50%", left: "50%", isActive: false },
         { url: "https://cdn.prod.website-files.com/62df9251ae9124976626bcc8/62ebbc00cb265c298b575ce5_Social%20Share%20385px.png", top: "54%", left: "44%", isActive: false },
         { url: "https://cdn.dribbble.com/userupload/13541292/file/still-24dc32bf0d6fa3550ef87bbd966c94b7.png?resize=400x0", top: "45%", left: "47%", isActive: false },
         { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTemZV7uk5cnZt7Ryky-75kGVu7yZRd7hG-sA&s", top: "57%", left: "58%", isActive: false },
         { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVhjmtEhKqjFM9egdoFJH-KGSfowG_5qu_g&s", top: "53%", left: "60%", isActive: false },
         { url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197e4/665fbe2fcca809ae990b74bf_Rectangle%20647.webp", top: "65%", left: "55%", isActive: false }
-    ]
+    ] )
+
+    const { scrollYProgress } = useScroll()
+
+    scrollYProgress.on( "change", number => {
+        // console.log(Math.floor(number*100));
+
+        const showImages =(arr) => {
+            setImages((prev)=>(
+                prev.map((item , index )=>(
+                    arr.indexOf(index) === -1 ? {...item , isActive:false} : {...item, isActive:true}
+                ))
+            ))
+        }
+
+        switch ( Math.floor( number * 100 ) ) {
+            case 0:
+                showImages( [] )
+                break
+            case 2:
+                showImages( [0] )
+                break
+            case 4:
+                showImages( [0 , 1] )
+                break
+            case 5:
+                showImages( [0, 1 ,2] )
+                break
+            case 7:
+                showImages( [0 ,1, 2, 3] )
+                break
+            case 9:
+                showImages( [0 ,1, 2, 3, 4] )
+                break
+            case 10:
+                showImages( [0 ,1, 2, 3, 4, 5] )
+                break
+        }
+    } )
 
     return (
         <div className='w-full '>

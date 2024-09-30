@@ -15,14 +15,14 @@ const Footer = () => {
                 <div className='basis-1/2 flex gap-1 ml-10'>
                     <div className='basis-1/3 text-sm'>
                         <h4 className='text-gray-400 capitalize mb-10'>Socials</h4>
-                        { ["instagram", "twitter (X?)", "LinkedIn"].map( ( item, index ) => <a key={ index } className='block text-gray-400 capitalize my-2' >{ item }</a> ) }
+                        { ["instagram", "twitter  (X?)", "LinkedIn"].map( ( item, index ) => <a key={ index } className='block text-gray-400 capitalize my-2' >{ item }</a> ) }
                     </div>
                     <div className='basis-1/3 text-sm'>
                         <h4 className='text-gray-400 capitalize mb-10'>Sitemap</h4>
                         { ["home", "work", "careers", "contact"].map( ( item, index ) => <a key={ index } className='block text-gray-400 capitalize my-2' >{ item }</a> ) }
                     </div>
                     <div className='basis-2/3 flex flex-col items-end mt-10'>
-                        <p className='text-end text-sm font-semibold mb-3'>Refokus is prior digital agency driven by design and empowered by technolgy</p>
+                        <p className='text-end text-sm font-semibold mb-5'>Refokus is prior digital agency driven by design and empowered by technolgy</p>
                         <span className='inline-block px-3 py-1 text-end bg-violet-600'><i>W</i> Enterprise partner</span>
                     </div>
                 </div>
